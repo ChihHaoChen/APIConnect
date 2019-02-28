@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B206051B22164F09004FEF7B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B206051A22164F09004FEF7B /* GradientView.swift */; };
+		B207BC6A222795BB0024AF65 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B207BC69222795BB0024AF65 /* LoginVC.swift */; };
 		B24612842215E5E400FE9991 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24612832215E5E400FE9991 /* SWRevealViewController.m */; };
 		B24612872215E79400FE9991 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24612862215E79400FE9991 /* ChannelVC.swift */; };
 		B25F0E06221509C400CFA5AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25F0E05221509C400CFA5AF /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		9258C9494FBA236BCE7115A5 /* Pods-ApiConnect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiConnect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApiConnect/Pods-ApiConnect.debug.xcconfig"; sourceTree = "<group>"; };
 		B206051A22164F09004FEF7B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		B207BC69222795BB0024AF65 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B24612822215E5E400FE9991 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../ResourcesUdemy/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
 		B24612832215E5E400FE9991 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../ResourcesUdemy/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
 		B24612852215E62400FE9991 /* ApiConnect-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ApiConnect-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				B25F0E1822150FC700CFA5AF /* ChatVC.swift */,
 				B24612862215E79400FE9991 /* ChannelVC.swift */,
+				B207BC69222795BB0024AF65 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			files = (
 				B25F0E1922150FC700CFA5AF /* ChatVC.swift in Sources */,
 				B25F0E06221509C400CFA5AF /* AppDelegate.swift in Sources */,
+				B207BC6A222795BB0024AF65 /* LoginVC.swift in Sources */,
 				B206051B22164F09004FEF7B /* GradientView.swift in Sources */,
 				B25F0E1B2215101600CFA5AF /* Extensions+UIView.swift in Sources */,
 				B24612842215E5E400FE9991 /* SWRevealViewController.m in Sources */,

@@ -90,9 +90,14 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 60
         
         
-        
+        loginButton.addTarget(self, action: #selector(toLoginPage), for: .touchUpInside)
         setupView()
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func toLoginPage()  {
+        let loginController = LoginVC()
+        self.present(loginController, animated: false, completion: nil)
     }
     
     func setupView()    {
