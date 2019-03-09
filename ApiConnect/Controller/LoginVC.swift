@@ -84,6 +84,15 @@ class LoginVC: UIViewController {
         return iv
     }()
     
+    let avatarImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.image = #imageLiteral(resourceName: "profileDefault")
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFill
+        
+        return iv
+    }()
+    
     lazy var loginRegisterSegmentedControl: UISegmentedControl = {
         let sc = UISegmentedControl(items: ["Login", "Register"])
         sc.translatesAutoresizingMaskIntoConstraints = false
@@ -120,6 +129,15 @@ class LoginVC: UIViewController {
         passwordTextFieldHeightAnchor?.isActive = false
         passwordTextFieldHeightAnchor = passwordField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 1/2 : 1/3)
         passwordTextFieldHeightAnchor?.isActive = true
+        
+        // change the appearing of avatarImageView
+        avatarImageView.isHidden = loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? true : false
+        
+        // change the top anchor of the login-register button
+        loginRegisterButtonTopAnchor?.isActive = false
+        loginRegisterButtonTopAnchor = loginRegisterButton.topAnchor.constraint(equalTo: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? inputsContainerView.bottomAnchor : avatarImageView.bottomAnchor, constant: 12)
+        loginRegisterButtonTopAnchor?.isActive = true
+        
     }
 
     
@@ -138,13 +156,14 @@ class LoginVC: UIViewController {
         view.addSubview(loginImageView)
         view.addSubview(loginRegisterSegmentedControl)
         view.addSubview(cancelImageView)
+        view.addSubview(avatarImageView)
         
         setupInputContainerView()
         setupLoginRegisterButton()
         setupLoginImage()
         setupLoginRegisterSegmentedControl()
         setupCancelImage()
-
+        setupAvatarImage()
     }
     
     func setupCancelImage() {
@@ -225,12 +244,23 @@ class LoginVC: UIViewController {
         passwordTextFieldHeightAnchor?.isActive = true
     }
     
+    var loginRegisterButtonTopAnchor: NSLayoutConstraint?
+    
     func setupLoginRegisterButton() {
         //button needs x, y, widht, height constraints
         loginRegisterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        loginRegisterButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant: 12).isActive = true
+        //loginRegisterButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant: 12).isActive = true
+        loginRegisterButtonTopAnchor = loginRegisterButton.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 12)
+        loginRegisterButtonTopAnchor?.isActive = true
         loginRegisterButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         loginRegisterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    func setupAvatarImage() {
+        avatarImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        avatarImageView.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant: 12).isActive = true
+        avatarImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        avatarImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     /*
     // MARK: - Navigation
