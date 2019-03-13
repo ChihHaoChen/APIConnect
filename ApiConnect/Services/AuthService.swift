@@ -52,7 +52,12 @@ class AuthService   {
         
         registerLoginRequest(URL: URL_REGISTER, body: body) {(success) in
             if(success) {
-                print("A new user is registered.")
+                self.registerLoginRequest(URL: URL_LOGIN, body: body) { (sucess) in
+                    if(success) {
+                        print("A new user is registered and logged-in.")
+                    }
+                }
+                
             }
         }
 

@@ -23,7 +23,7 @@ class LoginVC: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
         button.layer.cornerRadius = 5
-        button.setTitle("Register", for: .normal)
+        button.setTitle("Login", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
@@ -202,6 +202,9 @@ class LoginVC: UIViewController {
         loginRegisterSegmentedControl.bottomAnchor.constraint(equalTo: inputsContainerView.topAnchor, constant: -12).isActive = true
         loginRegisterSegmentedControl.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         loginRegisterSegmentedControl.heightAnchor.constraint(equalToConstant: 36).isActive = true
+        loginRegisterSegmentedControl.selectedSegmentIndex = 0
+        loginRegisterButton.addTarget(self, action: #selector(loginButtonPressed(_:)), for: .touchUpInside)
+        
     }
     
     func setupLoginImage()  {
@@ -220,7 +223,7 @@ class LoginVC: UIViewController {
         inputsContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         inputsContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         inputsContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
-        inputsContainerViewHeightAnchor = inputsContainerView.heightAnchor.constraint(equalToConstant: 150)
+        inputsContainerViewHeightAnchor = inputsContainerView.heightAnchor.constraint(equalToConstant: 100)
         inputsContainerViewHeightAnchor?.isActive = true
         
         inputsContainerView.addSubview(nameField)
@@ -234,7 +237,7 @@ class LoginVC: UIViewController {
         nameField.topAnchor.constraint(equalTo: inputsContainerView.topAnchor).isActive = true
         
         nameField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
-        nameTextFieldHeightAnchor = nameField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/3)
+        nameTextFieldHeightAnchor = nameField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 0)
         nameTextFieldHeightAnchor?.isActive = true
         
         //nameSeparator needs x, y, width, height constraints
@@ -248,7 +251,7 @@ class LoginVC: UIViewController {
         emailField.topAnchor.constraint(equalTo: nameField.bottomAnchor).isActive = true
         
         emailField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
-        emailTextFieldHeightAnchor = emailField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/3)
+        emailTextFieldHeightAnchor = emailField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/2)
         emailTextFieldHeightAnchor?.isActive = true
         
         //emailSeparator needs x, y, width, height constraints
@@ -262,7 +265,7 @@ class LoginVC: UIViewController {
         passwordField.topAnchor.constraint(equalTo: emailField.bottomAnchor).isActive = true
         
         passwordField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
-        passwordTextFieldHeightAnchor = passwordField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/3)
+        passwordTextFieldHeightAnchor = passwordField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/2)
         passwordTextFieldHeightAnchor?.isActive = true
     }
     
@@ -272,7 +275,7 @@ class LoginVC: UIViewController {
         //button needs x, y, widht, height constraints
         loginRegisterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         //loginRegisterButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant: 12).isActive = true
-        loginRegisterButtonTopAnchor = loginRegisterButton.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 12)
+        loginRegisterButtonTopAnchor = loginRegisterButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant: 12)
         loginRegisterButtonTopAnchor?.isActive = true
         loginRegisterButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         loginRegisterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -284,6 +287,7 @@ class LoginVC: UIViewController {
         avatarImageView.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant: 12).isActive = true
         avatarImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         avatarImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        avatarImageView.isHidden = true
     }
     /*
     // MARK: - Navigation
