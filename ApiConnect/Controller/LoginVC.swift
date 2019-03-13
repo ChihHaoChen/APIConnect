@@ -138,8 +138,30 @@ class LoginVC: UIViewController {
         loginRegisterButtonTopAnchor = loginRegisterButton.topAnchor.constraint(equalTo: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? inputsContainerView.bottomAnchor : avatarImageView.bottomAnchor, constant: 12)
         loginRegisterButtonTopAnchor?.isActive = true
         
+        if loginRegisterSegmentedControl.selectedSegmentIndex == 0  {
+            print("Login Button")
+            loginRegisterButton.addTarget(self, action: #selector(loginButtonPressed(_:)), for: .touchUpInside)
+        }
+        else    {
+            print("Register Button")
+            loginRegisterButton.addTarget(self, action: #selector(registerButtonPressed(_:)), for: .touchUpInside)
+        }
+        
     }
-
+    
+    @objc func registerButtonPressed(_ sender: Any) {
+        guard let email = emailField.text, emailField.text != "" else {return}
+        guard let password = passwordField.text, passwordField.text != "" else {return}
+        
+        AuthService.instance.registerUser(email: email, password: password)
+    }
+    
+    @objc func loginButtonPressed(_ sender: Any) {
+        guard let email = emailField.text, emailField.text != "" else {return}
+        guard let password = passwordField.text, passwordField.text != "" else {return}
+        
+        AuthService.instance.loginUser(email: email, password: password)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -254,6 +276,7 @@ class LoginVC: UIViewController {
         loginRegisterButtonTopAnchor?.isActive = true
         loginRegisterButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         loginRegisterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+
     }
     
     func setupAvatarImage() {

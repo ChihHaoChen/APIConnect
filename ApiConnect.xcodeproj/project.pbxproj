@@ -11,6 +11,9 @@
 		B207BC6A222795BB0024AF65 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B207BC69222795BB0024AF65 /* LoginVC.swift */; };
 		B24612842215E5E400FE9991 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24612832215E5E400FE9991 /* SWRevealViewController.m */; };
 		B24612872215E79400FE9991 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24612862215E79400FE9991 /* ChannelVC.swift */; };
+		B256703E22344B500096DF7E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B256703D22344B500096DF7E /* AuthService.swift */; };
+		B256704122344C570096DF7E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B256704022344C570096DF7E /* Constants.swift */; };
+		B256704422348FD00096DF7E /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B256704322348FD00096DF7E /* Keys.swift */; };
 		B25F0E06221509C400CFA5AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25F0E05221509C400CFA5AF /* AppDelegate.swift */; };
 		B25F0E0D221509C500CFA5AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B25F0E0C221509C500CFA5AF /* Assets.xcassets */; };
 		B25F0E1922150FC700CFA5AF /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25F0E1822150FC700CFA5AF /* ChatVC.swift */; };
@@ -26,6 +29,9 @@
 		B24612832215E5E400FE9991 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../ResourcesUdemy/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
 		B24612852215E62400FE9991 /* ApiConnect-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ApiConnect-Bridging-Header.h"; sourceTree = "<group>"; };
 		B24612862215E79400FE9991 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
+		B256703D22344B500096DF7E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		B256704022344C570096DF7E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B256704322348FD00096DF7E /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		B25F0E02221509C400CFA5AF /* ApiConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25F0E05221509C400CFA5AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B25F0E0C221509C500CFA5AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +88,30 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B256703C22344B210096DF7E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B256703D22344B500096DF7E /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B256703F22344C380096DF7E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B256704022344C570096DF7E /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B256704222348FB40096DF7E /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+				B256704322348FD00096DF7E /* Keys.swift */,
+			);
+			path = Keys;
+			sourceTree = "<group>";
+		};
 		B25F0DF9221509C400CFA5AF = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +133,9 @@
 		B25F0E04221509C400CFA5AF /* ApiConnect */ = {
 			isa = PBXGroup;
 			children = (
+				B256704222348FB40096DF7E /* Keys */,
+				B256703F22344C380096DF7E /* Utilities */,
+				B256703C22344B210096DF7E /* Services */,
 				B206051922164EDE004FEF7B /* View */,
 				B246127A2215E47700FE9991 /* Supporting Files */,
 				B25F0E1722150F9C00CFA5AF /* Controller */,
@@ -251,12 +284,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B25F0E1922150FC700CFA5AF /* ChatVC.swift in Sources */,
+				B256704422348FD00096DF7E /* Keys.swift in Sources */,
 				B25F0E06221509C400CFA5AF /* AppDelegate.swift in Sources */,
 				B207BC6A222795BB0024AF65 /* LoginVC.swift in Sources */,
 				B206051B22164F09004FEF7B /* GradientView.swift in Sources */,
 				B25F0E1B2215101600CFA5AF /* Extensions+UIView.swift in Sources */,
 				B24612842215E5E400FE9991 /* SWRevealViewController.m in Sources */,
 				B24612872215E79400FE9991 /* ChannelVC.swift in Sources */,
+				B256703E22344B500096DF7E /* AuthService.swift in Sources */,
+				B256704122344C570096DF7E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
